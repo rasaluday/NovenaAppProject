@@ -140,7 +140,8 @@
 
 
 	<div class="col-lg-12">
-		<form class="comment-form my-5" id="comment-form">
+		<form class="comment-form my-5" id="comment-form" action="{% url 'singleblock' %}" method="post">
+			{% csrf_token %}
 			<h4 class="mb-4">Write a comment</h4>
 			<div class="row">
 				<div class="col-md-6">
@@ -150,7 +151,7 @@
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<input class="form-control" type="text" name="mail" id="mail" placeholder="Email:">
+						<input class="form-control" type="text" name="email" id="mail" placeholder="Email:">
 					</div>
 				</div>
 			</div>

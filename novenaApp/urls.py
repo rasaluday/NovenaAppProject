@@ -14,5 +14,7 @@ urlpatterns=[
     path('blocksidebar/',viewblock_sidebar, name='block_sidebar'),
     path('blocksingle/',viewblock_single, name='block_single'),
     path('contact/',viewcontact, name='contact'),
+    path('subcribefotter/',viewSubscribe, name="subscribefotter"),
+    path('singleblock/',viewSingleBlock, name="singleblock"),
 
 ]

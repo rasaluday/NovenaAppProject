@@ -48,3 +48,18 @@ class Appointment(models.Model):
     def __str__(self):
         return f"{self.full_name} - {self.appointment_date}"
 
+
+class SubscribeFotter(models.Model):
+    email=models.EmailField(null=False, blank=False)
+
+    def __str__(self):
+        return f"{self.email}"
+    
+
+class SingleBlogModel(models.Model):
+    name= models.CharField(max_length=50, null=False, blank=False)
+    email=models.EmailField(unique=True,null=False,blank=False,)
+    message=models.TextField(null=False,blank=True)
+
+    def __str__(self):
+        return f"{self.name}"

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from novenaApp.models import contactModel,Appointment
+from novenaApp.models import contactModel,Appointment,SubscribeFotter,SingleBlogModel
 from django.http import HttpResponse
 
 # Create your views here.
@@ -101,4 +101,26 @@ def viewAppoinment(request):
         return render(request,"novenaApp/appoinment_success.html")
     return render(request,"novenaApp/appoinment.html")
 
+
+def viewSubscribe(request):
+    if request.method == "POST":
+        subscribe= SubscribeFotter.objects.create(
+            email= request.POST.get("email", "")
+        )
+        return render(request,"novenaApp/subscribefooter.html")
+    
+
+
+def viewSingleBlock(request):
+    if request.method == "POST":
+        message= SingleBlogModel.objects.create(
+            name = request.POST.get("name", ''),
+            email= request.POST.get("email", ""),
+            message=request.POST.get("comment", ""),
+        )
+        return HttpResponse("<h1>Message send succesfully</h1>")
+    
+    return render(request,"novenaApp/block_single.html")
+    
         
+      
