@@ -5,6 +5,7 @@
 
 <form action="{% url 'appoinment' %}" method="post">
   {% csrf_token %}
+
   <section class="page-title bg-1">
     <div class="overlay"></div>
     <div class="container">
@@ -44,6 +45,18 @@
             <p class="mb-4">Mollitia dicta commodi est recusandae iste, natus eum asperiores corrupti qui velit . Iste
               dolorum atque similique praesentium soluta.</p>
             <form id="#" class="appoinment-form" method="post" action="#">
+              {% csrf_token %}
+              {% if errors %}
+              <div style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom:
+                20px; border: 1px solid #f5c6cb; animation: slideDown 0.5s ease;">
+                <strong> Please fix the following errors:</strong>
+                <ul style="margin: 10px 0 • 20px;">
+                  {% for error in errors %}
+                  <li> {{error }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endif %}
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
@@ -65,36 +78,36 @@
                       <option value="dr-rahul">Dr. Rahul Verma</option>
                       <option value="dr_neha">Dr. Neha Singh</option>
                       <option value="dr_pooja">Dr. Pooja Gupta</option>
-                      
+
                     </select>
                   </div>
                 </div>
 
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <input name="appointment_date" id="date" type="date" class="form-control" placeholder="dd/mm/yyyy">
+                    <input name="appointment_date" id="date" type="date" class="form-control" value="{{ appointment_date }}" placeholder="dd/mm/yyyy">
                   </div>
                 </div>
 
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <input name="appointment_time" id="time" type="time" class="form-control" placeholder="Time">
+                    <input name="appointment_time" id="time" type="time" class="form-control" value="{{ appointment_time }}" placeholder="Time">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <input name="full_name" id="name" type="text" class="form-control" placeholder="Full Name">
+                    <input name="full_name" id="name" type="text" class="form-control" value="{{ full_name }}" placeholder="Full Name">
                   </div>
                 </div>
 
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <input name="phone_number" id="phone" type="Number" class="form-control" placeholder="Phone Number">
+                    <input name="phone_number" id="phone" type="Number" class="form-control" value="{{ phone_number }}" placeholder="Phone Number">
                   </div>
                 </div>
               </div>
               <div class="form-group-2 mb-4">
-                <textarea name="message" id="message" class="form-control" rows="6"
+                <textarea name="message" id="message" class="form-control" rows="6" 
                   placeholder="Your Message"></textarea>
               </div>
 

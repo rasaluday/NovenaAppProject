@@ -143,24 +143,29 @@
 		<form class="comment-form my-5" id="comment-form" action="{% url 'singleblock' %}" method="post">
 			{% csrf_token %}
 			<h4 class="mb-4">Write a comment</h4>
+			{% if error %}
+			<div class="alert alert-danger">
+				{{ error }}
+			</div>
+			{% endif %}
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						<input class="form-control" type="text" name="name" id="name" placeholder="Name:">
+						<input class="form-control" type="text" required name="name" id="name" placeholder="Name:">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<input class="form-control" type="text" name="email" id="mail" placeholder="Email:">
+						<input class="form-control" type="text" required name="email" id="mail" placeholder="Email:">
 					</div>
 				</div>
 			</div>
 
 
-			<textarea class="form-control mb-4" name="comment" id="comment" cols="30" rows="5"
+			<textarea class="form-control mb-4" name="message" required id="comment" cols="30" rows="5"
 				placeholder="Comment"></textarea>
 
-			<input class="btn btn-main-2 btn-round-full" type="submit" name="submit-contact" id="submit_contact"
+			<input class="btn btn-main-2 btn-round-full" type="submit" required name="submit-contact" id="submit_contact"
 				value="Submit Message">
 		</form>
 	</div>

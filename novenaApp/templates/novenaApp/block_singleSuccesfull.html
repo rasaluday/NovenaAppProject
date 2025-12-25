@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Comment Submitted</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #8360c3, #2ebf91);
+        }
+
+        .success-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            width: 360px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.8s ease;
+        }
+
+        .icon {
+            font-size: 70px;
+            color: #28a745;
+        }
+
+        h1 {
+            color: #333;
+            margin: 15px 0 10px;
+        }
+
+        p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #2ebf91;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #8360c3;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="success-card">
+        <div class="icon">✔</div>
+        <h1>Comment Submitted!</h1>
+        <p>
+            Thank you for your valuable comment.<br>
+            It has been posted successfully.
+        </p>
+        <a href="{% url 'block_single' %}" class="btn">Back to Blog</a>
+    </div>
+
+</body>
+
+</html>
