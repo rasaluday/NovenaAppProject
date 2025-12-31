@@ -3,6 +3,8 @@ from novenaApp.models import contactModel,Appointment,SubscribeFotter
 from django.http import HttpResponse
 from novenaApp.models import SingleBlogModel
 from datetime import datetime,date
+from django.contrib.auth.decorators import login_required
+from .models import *
 
 # Create your views here.
 
@@ -226,4 +228,16 @@ def viewSingleBlock(request):
     return render(request,"novenaApp/block_single.html")
     
         
-      
+@login_required(login_url='/admin/login/')
+def dashbord(request):
+    context={
+        'appointments':Appointment.objects.all(),
+        'contacts':contactModel.objects.all(),
+        'SubscribeFotter':SubscribeFotter.objects.all(),
+        'SingleBlogModel':SingleBlogModel.objects.all(),
+
+
+
+    }
+    resp = render(request,"novenaApp/dashbord.html",context)
+    return resp

@@ -1,0 +1,122 @@
+{% extends "novenaApp/base.html" %}
+{% load static %}
+{% block title %}Dashboard{% endblock title %}
+{% block body %}
+
+<div class="container my-5">
+
+    <h2 class="mb-4">Dashboard</h2>
+
+    <!-- Appointments -->
+    <h4>Appointments</h4>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Patient Name</th>
+                <th>Doctor</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+            <tr>
+                <td>{{ appointment.id }}</td>
+                <td>{{ appointment.full_name }}</td>
+                <td>{{ appointment.doctor }}</td>
+                <td>{{ appointment.appointment_date }}</td>
+                <td>{{ appointment.appointment_time }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">No appointments found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Contacts -->
+    <h4 class="mt-5">Contacts</h4>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Phone</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.subject }}</td>
+                <td>{{ contact.phoneNo }}</td>
+                <td>{{ contact.message }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center">No contacts found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Subscribers -->
+    <h4 class="mt-5">Subscribers</h4>
+    <table class="table table-bordered table-striped w-50">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sub in SubscribeFotter %}
+            <tr>
+                <th>{{ sub.id }}</th>
+                <td>{{ sub.email }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td class="text-center">No subscribers</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Blog Messages -->
+    <h4 class="mt-5">Blog Messages</h4>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for blog in SingleBlogModel %}
+            <tr>
+                <td>{{ blog.id }}</td>
+                <td>{{ blog.name }}</td>
+                <td>{{ blog.email }}</td>
+                <td>{{ blog.message }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3" class="text-center">No messages found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock body %}
