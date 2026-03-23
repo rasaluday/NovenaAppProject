@@ -72,12 +72,14 @@
     <table class="table table-bordered table-striped w-50">
         <thead class="table-dark">
             <tr>
+                <th>ID</th>
                 <th>Email</th>
             </tr>
         </thead>
         <tbody>
             {% for sub in SubscribeFotter %}
             <tr>
+                <td>{{ sub.id }}</td>
                 <td>{{ sub.email }}</td>
             </tr>
             {% empty %}
@@ -93,6 +95,7 @@
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
             <tr>
+                <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Message</th>
@@ -101,6 +104,7 @@
         <tbody>
             {% for blog in SingleBlogModel %}
             <tr>
+                <td>{{ blog.id }}</td>
                 <td>{{ blog.name }}</td>
                 <td>{{ blog.email }}</td>
                 <td>{{ blog.message }}</td>
