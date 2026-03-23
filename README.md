@@ -40,7 +40,7 @@ mediplus/
 
 Setup Instructions:
 # Clone repository
-git clone https://github.com/rasaluday/mediplus.git
+git clone https:https://github.com/rasaluday/NovenaAppProject.git
 
 # Move to project folder
 cd mediplus
