@@ -1,7 +1,7 @@
-MediPlus App – Django Hospital Management System
+NovenaAppProject – Appointment Management Web Application
 
 📌 Overview
-MediPlus is a web-based Hospital Management System built using Django.
+NovenaAppProject is a web-based Hospital Appointment Management System built using Django.
 It allows patients to book appointments online and helps admins manage hospital operations efficiently.
 
 🚀 Features:
@@ -40,7 +40,7 @@ mediplus/
 
 Setup Instructions:
 # Clone repository
-git clone https:https://github.com/rasaluday/mediplus.git
+git clone https:https://github.com/rasaluday/NovenaAppProject.git
 
 # Move to project folder
 cd mediplus
